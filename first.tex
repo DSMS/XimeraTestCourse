@@ -1,36 +1,34 @@
 \documentclass{ximera}
 
-\title{This is the sample!}
-\author{A Ximera Author}
+\title{Integration by parts}
+\author{Alexander Taam}
 
-\begin{abstract}
-  This is a place to get started.
-\end{abstract}
+
 
 \begin{document}
+\begin{abstract}
+  A technique to help integrate products.
+\end{abstract}
 \maketitle
 
-Here's a sample question.
+Since we've seen that the \emph{substitution rule} provides an integration rule/notation corresponding to the chain rule, it's natural to look for integral rules corresponding to other differentiation rules. In particular, integrals of \emph{products} are often hard to calculate.
 
 \begin{problem}
-\begin{multipleChoice}
-\choice{Incorrect}
-\choice{Not this one!}
-\choice[correct]{Click here?}
-\choice{Not me!}
-\end{multipleChoice}
+Evaluate $\int xe^xdx$.
+
+$\int xe^xdx = \answer{xe^x-e^x+C}$.
+\begin{hint}
+Try calculating $\frac{d}{dx}(\frac{x^2}{2}e^x)$.
+
+It is a common mistake to try integrating each factor separately, we can see that this won't work!
+\end{hint}
+\begin{explanation}
+This pitfall does point to some form of function to try as an antiderivative, since it appears that $xe^x$ could be the result of a chain rule differentiation if there is some ``cancelling'' term. Specifically $\frac{d}{dx}(xe^x-e^x)=e^x+xe^x-e^x=xe^x$. 
+
+So \[\int xe^xdx=xe^x-e^x+C\]
+\end{explanation}
+
 \end{problem}
 
-\begin{problem}
-   You can test that $x + x = \answer{2x}$ or that $x \cdot x = \answer{x^2}$.
-\end{problem}
-
-\begin{problem}
-   The tolerance 0.01 means $\pi \approx \answer[tolerance=0.01]{3.141592653}$
-\end{problem}
-
-\begin{problem}
-   The tolerance 17 means $3421 \approx \answer[tolerance=17]{3421}$
-\end{problem}
 
 \end{document}
