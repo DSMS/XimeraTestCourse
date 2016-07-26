@@ -65,7 +65,7 @@ no marks
         fill opacity=0.2] fill between[of=A and B,soft clip={domain=1:4.25}]; % filling
 \node (a) at (axis cs:2.6,30)  {\textcolor{red}{$Area=60(4.25-1)$}};
 \node (b) at (axis cs:3,22)  {\textcolor{red}{$=s(4.25)-s(1)$}};
-
+\legend{$y=s(t)$}
 
   \end{axis}
 \end{tikzpicture}
@@ -75,11 +75,9 @@ This is not coincidence, in fact, we will see that displacement corresponds to t
 
 \begin{problem}{Net Area Problem}
 \begin{foldable}
-\unfoldable{Given a continuous function $f(x)$ on $[a,b]$, what is the \emph{net area} between the graph $y=f(x)$ and the $x$-axis?
+\unfoldable{Given a continuous function $f(x)$ on $[a,b]$, what is the \emph{net area} between the graph $y=f(x)$ and the $x$-axis?}
 
-By \emph{net area} we mean:} the area of the region bounded by $y=f(x)$, the $x$-axis, and the lines $x=a$ and $x=b$, where the area of portions of the region above the $x$-axis count as a positive contribution, and portions below the $x$-axis give a negative contribution.
-\end{foldable}
-\end{problem}
+By \emph{net area} we mean the area of the region bounded by $y=f(x)$, the $x$-axis, and the lines $x=a$ and $x=b$, where the area of portions of the region above the $x$-axis count as a positive contribution, and portions below the $x$-axis give a negative contribution.
 
 \begin{image}
     \begin{tikzpicture}
@@ -110,6 +108,8 @@ no marks
     \end{tikzpicture}
   \end{image}
 The net area under $y=f(x)$ from $0$ to $5$ is $A_1-A_2+A_3$
+\end{foldable}
+\end{problem}
 
 While we generally have a physical intuition for the idea of area that extends beyond squares, triangles, etc. (eg. moving some fixed amount of material into a different shape), we are limited to those shapes for which we know explicit formulas, when attempting calculation. In order to define, and work with areas of more general shapes, calculus is requires.
 
