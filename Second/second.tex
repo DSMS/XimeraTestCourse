@@ -41,17 +41,44 @@ So in total the car travels \[60+60+60+15=3.25\cdot60=s(4.25)-s(1)\] which is ex
 \end{example}
 
 If we graph the constant velocity function $y=v(t)=60$ from the previous example, notice that the displacement over the interval $[1,4.25]$ exactly corresponds to the area of the region between the lines $y=60$, $y=0$, $x=1$ and $x=4.25$.
-\[
-\graph{y=60\{0< x\},0\leq y\leq 60\{1< x< 4.25\}}
-\]
+
+\begin{image}
+    \begin{tikzpicture}
+  \begin{axis}[
+domain=0:5, 
+range=0:75,
+xlabel=$t$,
+ylabel=$y$,
+samples=100,grid=major, 
+xtick={0,1,2,3,4.25,5},
+ytick={0,60},
+legend pos=south west,
+every axis x label/.style={at={(current axis.south east)},right=2mm},
+every axis y label/.style={at={(current axis.north west)},above=2mm},
+no marks
+]
+    \addplot+[name path=A, color=blue, domain=0:5, line width=.6mm] {60}; % actual curve
+    \addplot+[draw=none,name path=B] {0};     % “fictional” curve
+    \addplot+[thick,
+        color=blue,
+        fill=blue, 
+        fill opacity=0.2] fill between[of=A and B,soft clip={domain=1:4.25}]; % filling
+\node (a) at (axis cs:2.6,30)  {\textcolor{red}{$Area=60(4.25-1)$}};
+\node (b) at (axis cs:3,22)  {\textcolor{red}{$=s(4.25)-s(1)$}};
+
+
+  \end{axis}
+\end{tikzpicture}
+  \end{image}
 
 This is not coincidence, in fact, we will see that displacement corresponds to the area under the graph of the velocity function, even for non-constant velocity functions. For this reason we are interested in the following general problem.
 
 \begin{problem}{Net Area Problem}
+\begin{foldable}
+\unfoldable{Given a continuous function $f(x)$ on $[a,b]$, what is the \emph{net area} between the graph $y=f(x)$ and the $x$-axis?
 
-Given a continuous function $f(x)$ on $[a,b]$, what is the \emph{net area} between the graph $y=f(x)$ and the $x$-axis?
-
-By \emph{net area} we mean the area of the region bounded by $y=f(x)$, the $x$-axis, and the lines $x=a$ and $x=b$, where the area of portions of the region above the $x$-axis count as a positive contribution, and portions below the $x$-axis give a negative contribution.
+By \emph{net area} we mean:} the area of the region bounded by $y=f(x)$, the $x$-axis, and the lines $x=a$ and $x=b$, where the area of portions of the region above the $x$-axis count as a positive contribution, and portions below the $x$-axis give a negative contribution.
+\end{foldable}
 \end{problem}
 
 \begin{image}
