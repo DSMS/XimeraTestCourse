@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\usepgfplotslibrary{fillbetween}
+\outcome{Awareness of correspondence between definite integral and area under a curve.}
+\outcome{Familiarity with integral notation.}
+\outcome{Familiarity with Riemann sum notation.}
+\title{How to approximate area under a curve, using Riemann sums}
+\author{Alexander Taam}
+
+
+
+\begin{document}
+\begin{abstract}
+  We describe a systematic way of approximating area of a curved region, using rectangles.
+\end{abstract}
+\maketitle
+
+To define and calculate area of arbitrary shapes, we use approximating rectangles and limits.
+
+\begin{definition}\label{def:partition}
+\begin{foldable}
+\unfoldable{
+In other words, a regular partition of $n$ subintervals is the result of cutting up $[a,b]$ into $n$ pieces of the same size, and labeling the new endpoints $x_0,x_1,\dots,x_n$ in order.} In other words, a \emph{partition} of a closer interval $[a,b]$ is a set of numbers $a=x_0<x_1<x_2<\dots<x_{n-1}<x_n=b$. It is a \emph{regular partition} if each $x_i-x_{i-1}=\frac{b-a}{n}$. In that case denote the value $\frac{b-a}{n}$ by $\Delta x$
+\end{foldable}
+\end{definition}
+
+\end{document}

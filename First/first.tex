@@ -1,0 +1,48 @@
+\documentclass{ximera}
+
+\title{Integration by parts}
+\author{Alexander Taam}
+
+\begin{document}
+\begin{abstract}
+  A technique to help integrate products.
+\end{abstract}
+\maketitle
+
+Since we've seen that the \emph{substitution rule} provides an integration rule/notation corresponding to the chain rule, it's natural to look for integral rules corresponding to other differentiation rules. In particular, integrals of \emph{products} are often hard to calculate.
+
+\begin{problem}
+Evaluate $\int xe^xdx$.
+
+$\int xe^xdx = \answer[given]{xe^x-e^x}+C$.
+\begin{hint}
+Try calculating $\frac{d}{dx}(\frac{x^2}{2}e^x)$.
+
+It is a common mistake to try integrating each factor separately, we can see that this won't work!
+\end{hint}
+\begin{feedback}
+This pitfall does point to some form of function to try as an antiderivative, since it appears that $xe^x$ could be the result of a chain rule differentiation if there is some ``cancelling'' term. Specifically $\frac{d}{dx}(xe^x-e^x)=e^x+xe^x-e^x=xe^x$. 
+
+So \[\int xe^xdx=xe^x-e^x+C\]
+\end{feedback}
+
+\end{problem}
+
+
+This kind of guess and check is not always practical, so we explore such a ``reversal'' of the product rule, with general notation. Let $f(x)$ and $g(x)$ be differentiable functions. The product rule states that $$\frac{d}{dx}(f(x)g(x))=f'(x)g(x)+f(x)g'(x).$$ Then integrating both sides of the equation
+$$\int \frac{d}{dx}(f(x)g(x))dx=\int \left(f'(x)g(x)+f(x)g'(x)\right)dx$$
+and using the Fundamental Theorem of Calculus (and using the addition rule for integrals), we then have that 
+$$f(x)g(x)=\int f'(x)g(x)dx+\int f(x)g'(x)dx.$$
+Rearranging the equation to
+$$\int f(x)g'(x)dx=f(x)g(x)-\int f'(x)g(x)dx$$
+allows the problem of calculating $\int f(x)g'(x)dx$ to be reduced to the problem of calculating $\int f'(x)g(x)dx$. This is helpful if $\int f'(x)g(x)dx$ is easier to calculate than $\int f(x)g'(x)dx$.
+
+The above notation can be somewhat awkward in practice. It's often useful to define new variables $u=f(x)$ and $v=g(x)$. In that notation, we've proven the following rule:
+\begin{theorem}{Integration by parts}\label{int-rule-parts}
+$$\int uv'dx=uv-\int u'vdx$$
+and for definite integrals (where $u=f(x)$ and $v=g(x)$ are continuous on $[a,b]$)
+$$\int_a^b uv'dx=[uv]_a^b-\int_a^b u'vdx$$
+\end{theorem}
+
+
+\end{document}

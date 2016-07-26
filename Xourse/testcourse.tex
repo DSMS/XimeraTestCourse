@@ -1,0 +1,41 @@
+\documentclass[10pt,handout,twocolumn,twoside,wordchoicegiven]{xourse}
+
+
+\input{../preamble.tex}
+
+%% \iftikzexport
+%% \newcommand\chapterstyle{}
+%% \newcommand\sectionstyle{}
+%% \else
+%% \usepackage{lulu1}
+%% \fi
+\usepackage{lulu1}
+
+\title{TestCourse}
+
+\begin{document}
+\maketitle
+
+\setcounter{tocdepth}{2}
+
+\part{Integration is great}
+%% Understanding Functions
+\chapterstyle
+\activity{../Second/titlepage.tex}
+\sectionstyle
+\activity{../Second/second.tex}
+
+\part{Integration by parts}
+%% Understanding Functions
+\chapterstyle
+\activity{../First/titlepage.tex}
+\sectionstyle
+\activity{../First/first.tex}
+\activity{../First/firstmore.tex}
+
+
+
+
+\iftikzexport\else\printindex\fi
+
+\end{document}
