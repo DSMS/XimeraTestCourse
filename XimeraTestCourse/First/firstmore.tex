@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+\title{More on integration by parts}
+\author{Alexander Taam}
+
+
+
+\begin{document}
+\begin{abstract}
+  More on integration by parts.
+\end{abstract}
+\maketitle
+
+The key to applying integration by parts successfully is to choose the factors $u$ and $v'$ strategically.
+
+\begin{problem}
+Evaluate $\int xe^xdx$
+
+$\int xe^xdx=\answer{xe^x-e^x}+C$
+
+\begin{feedback}
+ Let $u=x$ and $v'=e^x$. This motivation for this choice is that then $u'=1$ and $v=e^x$, and the integral $\int u'vdx=\int 1\cdot e^xdx$ can be evaluated well.
+
+Then
+\begin{align*}
+\int uv'dx&=uv-\int u'vdx\\
+\int xe^xdx&=xe^x-\int 1\cdot e^xdx\\
+&=xe^x-e^x+C
+\end{align*}
+\end{feedback}
+\end{problem}
+
+\end{document}
