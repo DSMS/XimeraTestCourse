@@ -25,4 +25,9 @@
 *.dpth
 *.nb
 *.ps
+<<<<<<< HEAD
 *.jpg
+=======
+*.jpg
+*.sage-chat
+>>>>>>> 3443fa426afc142c39708f4ecc8c37fcad975124
